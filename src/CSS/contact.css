@@ -1,0 +1,566 @@
+
+.cyberpunk-contact {
+    background: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 80px 20px 40px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+/* Animated Background */
+.cyberpunk-contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+    radial-gradient(ellipse at 20% 30%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+    z-index: -2;
+    animation: backgroundPulse 8s ease-in-out infinite alternate;
+}
+
+.cyberpunk-contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%2300ff4105' stroke-width='0.5'%3E%3Cpath d='M0 25h100M0 50h100M0 75h100'/%3E%3Cpath d='M25 0v100M50 0v100M75 0v100'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100px 100px;
+    z-index: -1;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes backgroundPulse {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.02); }
+}
+
+@keyframes gridMove {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(100px) translateY(100px); }
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.contact-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 
+    0 0 20px rgba(0, 255, 65, 0.6),
+    0 5px 30px rgba(0, 0, 0, 0.3);
+    letter-spacing: -2px;
+    position: relative;
+}
+
+.section-title::before {
+    content: '// ';
+    color: #00ff41;
+    font-size: 0.8em;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #00ff41, #00d4ff);
+    box-shadow: 0 0 20px #00ff41;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { width: 150px; opacity: 0.7; }
+    100% { width: 250px; opacity: 1; }
+}
+
+.pitch-text {
+    font-size: 1.2rem;
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+    animation: textFlicker 4s ease-in-out infinite;
+}
+
+@keyframes textFlicker {
+    0%, 90%, 100% { opacity: 1; }
+    95% { opacity: 0.8; }
+}
+
+.pitch-description {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.pitch-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+    animation: scanLine 3s ease-in-out infinite;
+}
+
+@keyframes scanLine {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+}
+
+/* Main Content Grid */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+/* Contact Info Panel - Updated with Cyberpunk Theme */
+.contact-info {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00d4ff;
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.contact-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 212, 255, 0.03), rgba(255, 0, 128, 0.03));
+    z-index: -1;
+    animation: infoGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes infoGlow {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+.info-title {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+.info-title::before {
+    content: '<';
+    color: #ff0080;
+    margin-right: 10px;
+}
+
+.info-title::after {
+    content: '/>';
+    color: #ff0080;
+    margin-left: 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(0, 212, 255, 0.08);
+    border-left: 3px solid #00d4ff;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-item:hover {
+    background: rgba(0, 212, 255, 0.15);
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.2);
+    border-left-color: #ff0080;
+}
+
+.contact-item:hover::before {
+    left: 100%;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #00d4ff;
+    margin-right: 1rem;
+    width: 30px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.contact-item:hover i {
+    color: #ff0080;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.8);
+}
+
+.contact-item a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.contact-item span {
+    color: #a0a0a0;
+    font-weight: 600;
+}
+
+/* Contact Form */
+.contact-form {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #ff0080;
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
+    backdrop-filter: blur(15px);
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 0, 128, 0.03), rgba(0, 255, 65, 0.03));
+    z-index: -1;
+    animation: formGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes formGlow {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+.form-title {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 0, 128, 0.6);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    color: #ff0080;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid rgba(255, 0, 128, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff0080;
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+    background: rgba(255, 0, 128, 0.05);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #ff3333;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
+}
+
+.error-message {
+    display: block;
+    color: #ff3333;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+    animation: errorPulse 2s ease-in-out infinite;
+}
+
+@keyframes errorPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(45deg, #ff0080, #00ff41);
+    border: none;
+    border-radius: 8px;
+    color: #000000;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.4);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #00d4ff, #00ff41);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.submit-btn:hover:not(:disabled)::before {
+    left: 0;
+}
+
+/* Resume Section */
+.resume-section {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff41;
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(15px);
+    margin-top: 3rem;
+}
+
+.resume-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 65, 0.03), rgba(0, 212, 255, 0.03));
+    z-index: -1;
+    animation: resumeGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes resumeGlow {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+.resume-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+    font-weight: 900;
+}
+
+.resume-title::before {
+    content: '{ ';
+    color: #00ff41;
+    font-size: 0.8em;
+}
+
+.resume-title::after {
+    content: ' }';
+    color: #00ff41;
+    font-size: 0.8em;
+}
+
+.resume-description {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(45deg, #00ff41, #00d4ff);
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 255, 65, 0.4);
+    color: #ffffff;
+}
+
+.cta-button i {
+    font-size: 1.3rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Loading Animation */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cyberpunk-contact {
+    padding: 60px 15px 30px;
+    }
+
+    .section-title {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+    }
+
+    .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    }
+
+    .contact-info,
+    .contact-form,
+    .resume-section {
+    padding: 1.5rem;
+    }
+
+    .pitch-text {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    }
+
+    .pitch-description {
+    font-size: 1rem;
+    padding: 1.5rem;
+    }
+
+    .resume-title {
+    font-size: 2rem;
+    }
+
+    .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    }
+}

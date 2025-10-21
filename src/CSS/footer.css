@@ -1,0 +1,197 @@
+/* Simple Footer Cyberpunk Theme CSS */
+
+footer {
+  position: relative;
+  background: linear-gradient(135deg, 
+    var(--bg-primary) 0%, 
+    var(--bg-secondary) 50%, 
+    var(--bg-primary) 100%
+  );
+  border-top: 2px solid var(--accent-primary);
+  box-shadow: 
+    0 -2px 20px rgba(0, 255, 65, 0.3),
+    inset 0 1px 0 rgba(0, 255, 65, 0.2);
+  padding: 2rem 0;
+  margin-top: auto;
+  overflow: hidden;
+}
+
+/* Animated top border */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--accent-primary), 
+    var(--accent-secondary), 
+    var(--neon-pink),
+    var(--accent-primary), 
+    transparent
+  );
+  animation: footerScan 3s ease-in-out infinite;
+}
+
+@keyframes footerScan {
+  0%, 100% { transform: translateX(-100%); opacity: 0.7; }
+  50% { transform: translateX(100%); opacity: 1; }
+}
+
+/* Footer background pattern */
+footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 65, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: -1;
+  animation: footerGrid 25s linear infinite;
+}
+
+@keyframes footerGrid {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, 30px); }
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: var(--accent-primary);
+  box-shadow: 0 0 20px var(--accent-primary);
+  animation: footerBottomGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes footerBottomGlow {
+  0% { width: 100px; opacity: 0.7; }
+  100% { width: 200px; opacity: 1; }
+}
+
+.copyright {
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+}
+
+.built-with {
+  color: var(--accent-primary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px var(--accent-primary);
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 5px var(--accent-primary); }
+  100% { text-shadow: 0 0 15px var(--accent-primary), 0 0 25px var(--accent-primary); }
+}
+
+.built-with::before {
+  content: '< ';
+  color: var(--accent-secondary);
+}
+
+.built-with::after {
+  content: ' />';
+  color: var(--accent-secondary);
+}
+
+/* Hover effect for the entire footer */
+footer:hover {
+  box-shadow: 
+    0 -2px 30px rgba(0, 255, 65, 0.4),
+    inset 0 1px 0 rgba(0, 255, 65, 0.3);
+}
+
+footer:hover .copyright {
+  color: var(--text-primary);
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  footer {
+    padding: 1.5rem 0;
+  }
+  
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .copyright {
+    font-size: 0.8rem;
+  }
+  
+  .built-with {
+    font-size: 0.7rem;
+  }
+  
+  .footer-bottom::before {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .copyright {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+  
+  .built-with {
+    font-size: 0.65rem;
+  }
+  
+  .footer-bottom::before {
+    width: 60px;
+  }
+  
+  footer::after {
+    background-size: 20px 20px;
+  }
+}
+
+/* Performance Optimization */
+@media (prefers-reduced-motion: reduce) {
+  footer::before,
+  footer::after,
+  .footer-bottom::before,
+  .built-with {
+    animation: none;
+  }
+  
+  footer:hover {
+    transform: none;
+  }
+}

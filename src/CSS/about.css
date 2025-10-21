@@ -1,0 +1,571 @@
+/* About Page Cyberpunk Theme CSS */
+:root {
+  /* Use the same variables as your home page for consistency */
+  --bg-primary: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-primary: #00ff41;
+  --accent-secondary: #00d4ff;
+  --neon-pink: #ff0080;
+  --smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#about {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  padding: 100px 2rem 50px 2rem;
+  overflow: hidden;
+}
+
+/* Background Effects */
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse at 80% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+  z-index: -2;
+  animation: aboutGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes aboutGlow {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0.7; transform: scale(1.02); }
+}
+
+/* Animated Circuit Background */
+#about::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%2300d4ff08' stroke-width='1'%3E%3Cpath d='M0 25h100M0 50h100M0 75h100'/%3E%3Cpath d='M25 0v100M50 0v100M75 0v100'/%3E%3Ccircle cx='25' cy='25' r='2' fill='%2300ff4108'/%3E%3Ccircle cx='75' cy='75' r='2' fill='%23ff008008'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  z-index: -1;
+  animation: circuitFlow 25s linear infinite;
+}
+
+@keyframes circuitFlow {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(-100px) translateY(-100px); }
+}
+
+/* Section Title */
+.section-title {
+  font-family: 'Courier New', monospace;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  text-shadow: 
+    0 0 15px rgba(0, 255, 65, 0.5),
+    0 5px 30px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* Space between text and braces */
+}
+
+.section-title::before {
+  content: '{';
+  color: var(--neon-pink);
+  font-size: 1em; /* Match the title size for consistency */
+  font-family: 'Courier New', monospace;
+  line-height: 1; /* Prevent line height issues */
+  text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+}
+
+.section-title::after {
+  content: '}';
+  color: var(--neon-pink);
+  font-size: 1em; /* Match the title size for consistency */
+  font-family: 'Courier New', monospace;
+  line-height: 1; /* Prevent line height issues */
+  text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+}
+
+/* Underline Animation */
+.section-title > span::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+  box-shadow: 0 0 20px var(--accent-primary);
+  animation: titleUnderline 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleUnderline {
+  0% { width: 150px; opacity: 0.7; }
+  100% { width: 250px; opacity: 1; }
+}
+
+/* About Content Container */
+.about-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Side - Avatar Container */
+.about-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 400px; /* Ensures proper container height */
+}
+
+/* Cyberpunk Hexagonal Frame */
+.about-avatar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(45deg, 
+    var(--accent-primary) 0%, 
+    transparent 25%, 
+    transparent 75%, 
+    var(--accent-secondary) 100%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  animation: hexagonPulse 4s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+.about-avatar::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  border: 2px solid var(--neon-pink);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+  animation: hexagonGlow 3s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes hexagonPulse {
+  0% { 
+    opacity: 0.3; 
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% { 
+    opacity: 0.8; 
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes hexagonGlow {
+  0% { 
+    opacity: 0.5; 
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+  }
+  100% { 
+    opacity: 1; 
+    box-shadow: 0 0 40px rgba(255, 0, 128, 0.6);
+  }
+}
+
+/* Avatar Image with Glitch Effect */
+.avatar-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  filter: drop-shadow(0 0 30px rgba(0, 255, 65, 0.4));
+  transform: translateY(0); /* Ensures proper positioning */
+}
+
+.avatar-img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 3px solid var(--accent-primary);
+  transition: all 0.3s var(--smooth);
+  position: relative;
+  z-index: 1;
+}
+
+/* Glitch Effect Layers */
+.avatar-img::before,
+.avatar-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.avatar-img::before {
+  animation: glitch-1 2s infinite;
+  background-blend-mode: screen;
+  background-color: rgba(255, 0, 128, 0.1);
+}
+
+.avatar-img::after {
+  animation: glitch-2 2s infinite;
+  background-blend-mode: screen;
+  background-color: rgba(0, 212, 255, 0.1);
+}
+
+@keyframes glitch-1 {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-2px); }
+  20% { transform: translateX(2px); }
+  30% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  50% { transform: translateX(-2px); }
+  60% { transform: translateX(2px); }
+  70% { transform: translateX(0); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(2px); }
+  25% { transform: translateX(-2px); }
+  35% { transform: translateX(2px); }
+  45% { transform: translateX(-2px); }
+  55% { transform: translateX(2px); }
+  65% { transform: translateX(-2px); }
+  75% { transform: translateX(0); }
+}
+
+/* Hover Effects for Avatar */
+.avatar-container:hover .avatar-img {
+  transform: scale(1.02);
+  filter: brightness(1.1) contrast(1.1);
+  box-shadow: 
+    0 0 40px rgba(0, 255, 65, 0.6),
+    inset 0 0 30px rgba(0, 255, 65, 0.1);
+}
+
+.avatar-container:hover::before {
+  animation-duration: 2s;
+}
+
+.avatar-container:hover::after {
+  animation-duration: 1.5s;
+}
+
+/* Glitch Text Effect for Hover */
+.avatar-container:hover .avatar-img::before {
+  animation: glitch-intense-1 0.3s infinite;
+}
+
+.avatar-container:hover .avatar-img::after {
+  animation: glitch-intense-2 0.3s infinite;
+}
+
+@keyframes glitch-intense-1 {
+  0%, 100% { transform: translateX(0) scaleX(1); }
+  25% { transform: translateX(-3px) scaleX(0.98); }
+  50% { transform: translateX(3px) scaleX(1.02); }
+  75% { transform: translateX(-2px) scaleX(0.99); }
+}
+
+@keyframes glitch-intense-2 {
+  0%, 100% { transform: translateX(0) scaleY(1); }
+  20% { transform: translateX(2px) scaleY(0.98); }
+  40% { transform: translateX(-3px) scaleY(1.02); }
+  60% { transform: translateX(3px) scaleY(0.99); }
+  80% { transform: translateX(-1px) scaleY(1.01); }
+}
+
+/* Right Side - Text Content */
+.about-text {
+  position: relative;
+}
+
+.about-text p {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2.5rem;
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 0 15px 15px 0;
+  backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+  text-align: justify;
+}
+
+/* Animated Border Effect */
+.about-text p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--neon-pink));
+  background-size: 200% 100%;
+  animation: borderGlow 4s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Scanning Line Effect */
+.about-text p::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 255, 65, 0.1), 
+    rgba(0, 212, 255, 0.1),
+    transparent);
+  animation: textScan 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes textScan {
+  0%, 90%, 100% { left: -100%; }
+  10%, 80% { left: 100%; }
+}
+
+/* Highlight Keywords */
+.about-text p strong,
+.about-text p b {
+  color: var(--accent-primary);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  font-weight: bold;
+}
+
+/* Data Terminal Effect */
+.about-text::before {
+  content: '> ACCESSING DEVELOPER PROFILE...';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: terminalBlink 2s ease-in-out infinite;
+}
+
+@keyframes terminalBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+/* Big Screens (e.g., >1400px) - Fixed positioning */
+@media (min-width: 1400px) {
+  .about-content {
+    max-width: 1600px;
+    gap: 5rem;
+  }
+  
+  .about-avatar {
+    min-height: 500px; /* Increased height for better spacing */
+  }
+  
+  .avatar-container {
+    width: 380px;
+    height: 380px;
+  }
+  
+  .about-text p {
+    font-size: 1.2rem;
+    padding: 3rem;
+  }
+}
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .avatar-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    padding: 2rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+    padding: 80px 1rem 30px 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-content {
+    gap: 2rem;
+  }
+
+  .avatar-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    line-height: 1.6;
+  }
+
+  #about::after {
+    background-size: 50px 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .avatar-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-text p {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+
+  .about-text::before {
+    font-size: 0.7rem;
+    top: -25px;
+  }
+}
+
+/* Performance Optimization */
+@media (prefers-reduced-motion: reduce) {
+  #about::before,
+  #about::after,
+  .about-avatar::before,
+  .about-avatar::after,
+  .section-title::after,
+  .about-text p::before,
+  .about-text p::after,
+  .about-text::before,
+  .avatar-img::before,
+  .avatar-img::after {
+    animation: none;
+  }
+
+  .avatar-container:hover .avatar-img {
+    transform: none;
+  }
+}
+
+/* Big Screens (e.g., >1400px) - Fixed positioning */
+@media (min-width: 1400px) {
+  .about-content {
+    max-width: 1600px;
+    gap: 5rem;
+  }
+  
+  .about-avatar {
+    min-height: 500px; /* Increased height for better spacing */
+  }
+  
+  .avatar-container {
+    width: 380px;
+    height: 380px;
+  }
+  
+  .about-text p {
+    font-size: 1.2rem;
+    padding: 3rem;
+  }
+}
+
+/* Additional Enhancement - Code Snippet Styling */
+.code-highlight {
+  color: var(--accent-primary);
+  background: rgba(0, 255, 65, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+/* Matrix Rain Effect (Optional) */
+.matrix-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -3;
+  opacity: 0.1;
+}
+
+.matrix-bg::before {
+  content: '01001001 01001110 01001110 01001111 01010110 01000001 01010100 01001001 01001111 01001110';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--accent-primary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  animation: matrixRain 20s linear infinite;
+  line-height: 1.2;
+}
+
+@keyframes matrixRain {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}

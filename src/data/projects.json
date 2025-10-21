@@ -1,0 +1,126 @@
+[
+     {
+    "id": 1,
+    "title": "EduSprint - E-Learning Platform",
+    "description": "EduSprint is a scalable e-learning platform built using microservice architecture and Clean Architecture principles. It supports three roles: Student, Instructor, and Admin. Admin manages instructors by reviewing their resumes and details before granting access, oversees all users, controls site banners, and organizes course categories such as Electronics, Web Development, and Mathematics. Instructors have a dashboard to create and manage lessons with videos, set up and manage assessments, track student progress, and interact with students through a real-time chat feature. Students can browse free and paid courses, purchase courses, view their marks and learning journey, and receive certificates upon course completion. The platform is designed for performance, scalability, and interactive learning, deployed using Docker and Kubernetes.",
+    "images": [
+      "https://your-server.com/projects/eduSprint/homepage.png",
+      "https://your-server.com/projects/eduSprint/course-page.png",
+      "https://your-server.com/projects/eduSprint/instructor-dashboard.png",
+      "https://your-server.com/projects/eduSprint/student-dashboard.png"
+    ],
+    "videos": [
+      "https://your-server.com/projects/eduSprint/demo.mp4"
+    ],
+    "techniques": [
+      "Node.js",
+      "Express.js",
+      "React",
+      "Tailwind CSS",
+      "MongoDB",
+      "Microservice Architecture",
+      "Clean Architecture",
+      "JWT",
+      "Socket.io (Live Chat)",
+      "Docker",
+      "Kubernetes",
+      "Payment Gateway API",
+      "Certificate Generation"
+    ],
+    "liveLink": "https://edu-sprint.vercel.app",
+    "githubLink": "https://github.com/myusername/eduSprint"
+  },
+    {
+    "id": 2,
+    "title": "TeeCraze - E-Commerce Web Application for T-Shirts",
+    "description": "TeeCraze is a full-stack e-commerce platform built using MVC architecture with EJS templates. It is dedicated exclusively to selling T-shirts and includes two roles: User and Admin. Admin can manage users, add T-shirt categories, create/edit/soft-delete products, generate sales reports in PDF and Excel, view an analytics dashboard, manage orders, create coupons, and manage homepage banners. Users can browse products with filters and search, add items to cart and wishlist, manage their profile and wallet, place orders with coupon application, manage addresses, and choose payment methods including Cash on Delivery, Wallet, and Razorpay. It also features authentication, password change functionality, and a responsive Bootstrap UI.",
+    "images": [
+      "https://your-server.com/projects/teeCraze/homepage.png",
+      "https://your-server.com/projects/teeCraze/product-page.png",
+      "https://your-server.com/projects/teeCraze/cart.png",
+      "https://your-server.com/projects/teeCraze/admin-dashboard.png",
+      "https://your-server.com/projects/teeCraze/orders-page.png"
+    ],
+    "videos": [
+      "https://your-server.com/projects/teeCraze/demo.mp4"
+    ],
+    "techniques": [
+      "Node.js",
+      "Express.js",
+      "MVC Architecture",
+      "EJS Templates",
+      "Bootstrap CSS",
+      "MongoDB",
+      "JWT",
+      "Razorpay API",
+      "ExcelJS",
+      "PDFKit"
+    ],
+    "liveLink": "https://tee-craze.vercel.app",
+    "githubLink": "https://github.com/myusername/teeCraze"
+  },
+  {
+    "id": 3,
+    "title": "Knowaria - Article Feed Platform",
+    "description": "Knowaria is a mini article feed platform where users can sign up, log in, and create, edit, and delete articles. It supports profile editing, liking and disliking articles, and blocking specific articles. The project is built using a repository pattern for clean code structure, with a responsive Tailwind CSS frontend.",
+    "images": [
+      "https://your-server.com/projects/knowaria/homepage.png",
+      "https://your-server.com/projects/knowaria/article-page.png",
+      "https://your-server.com/projects/knowaria/profile-page.png"
+    ],
+    "videos": [
+      "https://your-server.com/projects/knowaria/demo.mp4"
+    ],
+    "techniques": [
+      "Node.js",
+      "Express.js",
+      "React",
+      "Tailwind CSS",
+      "MongoDB",
+      "Repository Pattern",
+      "JWT"
+    ],
+    "liveLink": "https://knowaria.vercel.app",
+    "githubLink": "https://github.com/myusername/knowaria"
+  },
+  {
+    "id": 4,
+    "title": "Netflix Clone",
+    "description": "A Netflix clone that replicates the core features of the streaming platform, including authentication, movie browsing, and video streaming. It uses the TMDB API for fetching movie data and Firebase for authentication, with a clean and responsive Tailwind CSS design.",
+    "images": [
+      "https://your-server.com/projects/netflix/home.png",
+      "https://your-server.com/projects/netflix/movie-details.png"
+    ],
+    "videos": [],
+    "techniques": [
+      "React",
+      "Redux",
+      "Firebase",
+      "TMDB API",
+      "Tailwind CSS"
+    ],
+    "liveLink": "https://my-netflix-clone.vercel.app",
+    "githubLink": "https://github.com/myusername/netflix-clone"
+  },
+  {
+    "id": 5,
+    "title": "OLX Clone",
+    "description": "An OLX clone platform where users can list products for sale, browse available products, and contact sellers. It includes user authentication, image uploads, product categories, and search and filter functionality.",
+    "images": [
+      "https://your-server.com/projects/olx/homepage.png",
+      "https://your-server.com/projects/olx/product-page.png"
+    ],
+    "videos": [],
+    "techniques": [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "JWT",
+      "Cloudinary API"
+    ],
+    "liveLink": "https://my-olx-clone.vercel.app",
+    "githubLink": "https://github.com/myusername/olx-clone"
+  }
+]

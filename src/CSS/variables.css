@@ -1,0 +1,47 @@
+:root {
+    /* Advanced Dark Color Palette */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #111118;
+    --bg-tertiary: #1a1a24;
+    --bg-card: #1e1e2e;
+    --bg-glass: rgba(30, 30, 46, 0.85);
+    
+    /* Neon Accent Colors */
+    --accent-primary: #00f5ff;
+    --accent-secondary: #7c3aed;
+    --accent-tertiary: #f59e0b;
+    --accent-danger: #ef4444;
+    --accent-success: #10b981;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;
+    --text-muted: #94a3b8;
+    --text-accent: #00f5ff;
+    --text-glow: #64748b;
+    
+    /* Advanced Gradients */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #00f5ff 100%);
+    --gradient-secondary: linear-gradient(135deg, #7c3aed 0%, #3b82f6 50%, #06b6d4 100%);
+    --gradient-accent: linear-gradient(45deg, #00f5ff, #7c3aed, #f59e0b);
+    --gradient-dark: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    
+    /* Advanced Shadows */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-hard: 0 16px 64px rgba(0, 0, 0, 0.6);
+    --shadow-neon: 0 0 20px rgba(0, 245, 255, 0.3);
+    --shadow-purple: 0 0 30px rgba(124, 58, 237, 0.4);
+    --shadow-glow: 0 0 40px rgba(0, 245, 255, 0.2), 0 0 80px rgba(124, 58, 237, 0.1);
+    
+    /* Backdrop Filters */
+    --blur-light: blur(8px);
+    --blur-medium: blur(16px);
+    --blur-heavy: blur(24px);
+    
+    /* Timing Functions */
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-sharp: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
