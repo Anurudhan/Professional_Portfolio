@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import Lottie from "lottie-react";
 import animationData from "../assets/Development.json"; // your downloaded Lottie file
 import profilePic from "../assets/darkcode.jpeg"; // Add your profile picture
@@ -47,18 +48,18 @@ const Home = () => {
           </p>
           
           <div className="hero-buttons fade-in">
-            <a
-              href="projects"
+            <Link
+              to="/projects"
               className="hero-btn btn-primary"
             >
               View My Work
-            </a>
-            <a
-              href="contact"
+            </Link>
+            <Link
+              to="/contact"
               className="hero-btn btn-secondary"
             >
               Contact Me
-            </a>
+            </Link>
           </div>
         </div>
       </div>

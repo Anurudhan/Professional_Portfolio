@@ -18,9 +18,9 @@ const projectsData = [
     ],
     media: [
       { type: "image", url: "/assets/eduSprint/landing.png" },
-      { type: "video", url: "/assets/eduSprint/pomo1.mp4" },
-      { type: "video", url: "/assets/eduSprint/user1.mp4" },
-      { type: "video", url: "/assets/eduSprint/admin1.mp4" }
+      { type: "video", url: "https://youtu.be/ZhWBkVixJE0" },
+      { type: "video", url: "https://youtu.be/IXoIiL5AW5I" },
+      { type: "video", url: "https://youtu.be/45XX3w7KIgQ" }
     ],
     liveDemo: "",
     github: "https://github.com/Anurudhan/EduSprint-server",
@@ -39,8 +39,8 @@ const projectsData = [
     media: [
     { type: "image", url: "/assets/teeCraze/landing.png" },
       { type: "image", url: "/assets/teeCraze/login.png" },
-      { type: "video", url: "/assets/teeCraze/user1.mp4" },
-      { type: "video", url: "/assets/teeCraze/admin1.mp4" },
+      { type: "video", url: "https://youtu.be/i_SBlG1d8i4" },
+      { type: "video", url: "https://youtu.be/PoYeWbn950s" },
     ],
     liveDemo: "https://yumi-tees.onrender.com/",
     github: "https://github.com/Anurudhan/YUMI-TEES-ecommerce",
@@ -58,7 +58,7 @@ const projectsData = [
     ],
      media: [
       { type: "image", url: "/assets/knowaria/landing.png" },
-      { type: "video", url: "/assets/knowaria/knowaria1.mp4" },
+      { type: "video", url: "https://youtu.be/oPcM_QWk8vU" },
     ],
     liveDemo: "https://article-feed-client.vercel.app/",
     github: "https://github.com/Anurudhan/Article_Feed_RepoPattern_Server",
@@ -75,7 +75,7 @@ const projectsData = [
     ],
      media: [
       { type: "image", url: "/assets/netFlix/front.png" },
-      { type: "video", url: "/assets/netFlix/slide.mp4" },
+      { type: "video", url: "https://youtu.be/49iFRT86BJQ" },
       { type: "image", url: "/assets/netFlix/signin.png" },
       { type: "image", url: "/assets/netFlix/signup.png" }
       

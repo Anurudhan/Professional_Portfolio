@@ -33,13 +33,13 @@ const ProjectModal = ({ project, onClose }) => {
   };
 
   const nextMedia = () => {
-    setCurrentMediaIndex((prev) => 
+    setCurrentMediaIndex((prev) =>
       prev === project.media.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevMedia = () => {
-    setCurrentMediaIndex((prev) => 
+    setCurrentMediaIndex((prev) =>
       prev === 0 ? project.media.length - 1 : prev - 1
     );
   };
@@ -48,12 +48,26 @@ const ProjectModal = ({ project, onClose }) => {
     setCurrentMediaIndex(index);
   };
 
+  // Function to extract YouTube video ID from URL
+  const getYouTubeVideoId = (url) => {
+    const regex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\\s]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  };
+
+  // Function to get YouTube thumbnail URL
+  const getYouTubeThumbnail = (url) => {
+    const videoId = getYouTubeVideoId(url);
+    return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
+  };
+
   const currentMedia = project.media[currentMediaIndex];
+  const isYouTube = currentMedia.type === 'video' && getYouTubeVideoId(currentMedia.url);
 
   return (
     <div className={`modal-overlay ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
-      <div 
-        className={`modal-content ${isClosing ? 'closing' : ''}`} 
+      <div
+        className={`modal-content ${isClosing ? 'closing' : ''}`}
         onClick={(e) => e.stopPropagation()}
         ref={modalContentRef}
       >
@@ -75,13 +89,22 @@ const ProjectModal = ({ project, onClose }) => {
         <div className="modal-gallery">
           <div className="gallery-main">
             {currentMedia.type === 'image' ? (
-              <img 
-                src={currentMedia.url} 
+              <img
+                src={currentMedia.url}
                 alt={`${project.title} - ${currentMediaIndex + 1}`}
                 className="gallery-main-media"
               />
+            ) : isYouTube ? (
+              <iframe
+                className="gallery-main-media"
+                src={`https://www.youtube.com/embed/${getYouTubeVideoId(currentMedia.url)}?autoplay=1`}
+                title={`${project.title} - ${currentMediaIndex + 1}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             ) : (
-              <video 
+              <video
                 src={currentMedia.url}
                 controls
                 className="gallery-main-media"
@@ -121,6 +144,11 @@ const ProjectModal = ({ project, onClose }) => {
                 >
                   {media.type === 'image' ? (
                     <img src={media.url} alt={`Thumbnail ${index + 1}`} />
+                  ) : getYouTubeVideoId(media.url) ? (
+                    <div className="video-thumbnail">
+                      <img src={getYouTubeThumbnail(media.url)} alt={`Thumbnail ${index + 1}`} />
+                      <div className="play-icon">▶</div>
+                    </div>
                   ) : (
                     <div className="video-thumbnail">
                       <video src={media.url} />
@@ -160,9 +188,9 @@ const ProjectModal = ({ project, onClose }) => {
           {/* Action Buttons */}
           <div className="modal-actions">
             {project.liveDemo && (
-              <a 
-                href={project.liveDemo?project.liveDemo:"maintenance"} 
-                target="_blank" 
+              <a
+                href={project.liveDemo ? project.liveDemo : 'maintenance'}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="action-btn demo-btn"
               >
@@ -171,9 +199,9 @@ const ProjectModal = ({ project, onClose }) => {
               </a>
             )}
             {project.github && (
-              <a 
-                href={project.github} 
-                target="_blank" 
+              <a
+                href={project.github}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="action-btn github-btn"
               >
