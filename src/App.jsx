@@ -9,12 +9,14 @@ import Footer from "./components/Footer";
 import ToastContainer from "./components/Toast";
 // import ExampleComponent from "./components/ExampleComponent";
 import { ToastProvider } from "./components/ToastProvider";
+import ScrollToTop from "./components/ScrollToTop";
 // import Maintenance from "./components/Maintenance";
 
 function App() {
   return (
     <ToastProvider>
     <Router>
+      <ScrollToTop />
       <Navbar />
       <ToastContainer />
       <Routes>

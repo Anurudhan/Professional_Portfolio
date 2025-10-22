@@ -37,7 +37,7 @@ const Home = () => {
           </h1>
           
           <p className="subtitle fade-in">
-            MERN Stack Architect | Problem Solver | Visionary Coder
+            Full-Stack Developer - MERN | Crafting Scalable Web Experiences
           </p>
           
           <p className="description fade-in">

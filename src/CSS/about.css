@@ -1,14 +1,4 @@
 /* About Page Cyberpunk Theme CSS */
-:root {
-  /* Use the same variables as your home page for consistency */
-  --bg-primary: #000000;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --accent-primary: #00ff41;
-  --accent-secondary: #00d4ff;
-  --neon-pink: #ff0080;
-  --smooth: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 #about {
   position: relative;

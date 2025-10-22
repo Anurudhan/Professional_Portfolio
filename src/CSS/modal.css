@@ -1,16 +1,5 @@
 /* modal.css - Cyberpunk Confirmation Modal */
-:root {
-  --bg-primary: #000000;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --accent-primary: #00ff41;
-  --accent-secondary: #00d4ff;
-  --neon-pink: #ff0080;
-  --error-color: #ff0040;
-  --warning-color: #ffb000;
-  --success-color: #00ff41;
-  --smooth: cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 /* Modal Backdrop */
 .modal-backdrop {
